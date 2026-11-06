@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Nutrição - Sincronizado</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Plataforma Nutricional</h2>
+
+        <!-- Navegação de Abas -->
+        <div class="tabs">
+            <button class="tab-btn active" id="btnUserTab">Área do Usuário / Cadastro</button>
+            <button class="tab-btn" id="btnAdminTab">Área do Administrador</button>
+        </div>
+
+        <!-- Painel do Usuário -->
+        <div id="user-panel" class="panel active">
+            <h3>Cadastro e Contato com o Nutricionista</h3>
+            <form id="userForm">
+                <div class="form-group">
+                    <label for="userName">Nome Completo:</label>
+                    <input type="text" id="userName" required placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">E-mail:</label>
+                    <input type="email" id="userEmail" required placeholder="seu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="userMsg">Dúvida ou Objetivo Nutricional:</label>
+                    <textarea id="userMsg" rows="4" required placeholder="Escreva sua dúvida ou objetivo..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Enviar para a Nuvem</button>
+            </form>
+            <p id="userFeedback"></p>
+        </div>
+
+        <!-- Painel do Administrador -->
+        <div id="admin-panel" class="panel">
+            <h3>Painel de Gestão (Acesso Restrito)</h3>
+            <div class="form-group" id="login-box">
+                <label for="adminPass">Senha de Administrador:</label>
+                <input type="password" id="adminPass" placeholder="Digite a senha (ex: admin123)">
+                <button type="button" class="submit-btn" id="btnLoginAdmin" style="margin-top: 0.5rem;">Entrar</button>
+            </div>
+
+            <div id="adminContent" style="display: none;">
+                <div class="admin-dashboard">
+                    <h4>Pacientes Cadastrados (Tempo Real):</h4>
+                    <div id="clientList">Carregando dados da nuvem...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Importando o arquivo JavaScript principal como Módulo -->
+    <script type="module" src="../javascript/app.js"></script>
+</body>
+
+</html>
